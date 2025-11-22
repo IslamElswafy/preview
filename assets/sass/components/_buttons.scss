@@ -1,0 +1,224 @@
+@use "../utilities" as *;
+
+.tj-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  background-color: var(--tj-color-theme-primary);
+  font-size: 16px;
+  font-weight: var(--tj-fw-sbold);
+  padding: 5px 5px 5px 25px;
+  text-align: center;
+  border-radius: 50px;
+  line-height: 1;
+  white-space: nowrap;
+  z-index: 2;
+  overflow: hidden;
+
+  .btn-text {
+    color: var(--tj-color-common-white);
+    overflow: hidden;
+    padding: 3px 0;
+    span {
+      display: flex;
+      line-height: 1;
+      text-shadow: 0 30px 0;
+      backface-visibility: hidden;
+      transform: translateY(0);
+      transition: 0.4s ease-in-out;
+    }
+  }
+  .btn-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    line-height: 1;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    background-color: var(--tj-color-theme-dark);
+    border-radius: 50%;
+    i {
+      color: var(--tj-color-common-white);
+      transform: rotate(-45deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &-white {
+    background-color: var(--tj-color-common-white);
+    .btn-text {
+      color: var(--tj-color-heading-primary);
+    }
+  }
+
+  &:hover {
+    .btn-text {
+      span {
+        transform: translateY(-30px);
+      }
+    }
+    .btn-icon {
+      i {
+        transform: rotate(0);
+      }
+    }
+  }
+  &-add-cart {
+    .btn-icon {
+      i {
+        transform: rotate(0);
+      }
+    }
+    &:hover {
+      .btn-icon {
+        i {
+          transform: rotate(0);
+          animation: gelatine 0.6s;
+        }
+      }
+    }
+  }
+  &-purchase {
+    &.tj-btn {
+      background-color: var(--tj-color-common-white);
+      padding-inline-start: 0;
+      padding-inline-end: 0;
+      .btn_inner {
+        padding: 9px 28px;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+
+        .btn_text {
+          text-shadow: none;
+          color: var(--tj-color-theme-dark);
+        }
+        &::before {
+          display: none;
+        }
+
+        img {
+          width: 90px;
+          filter: brightness(1);
+          transition: all 0.3s ease-in-out 0s;
+        }
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+        background-color: var(--tj-color-extra-2);
+        .btn_inner {
+          img {
+            filter: brightness(0);
+          }
+          .btn_text {
+            color: var(--tj-color-theme-dark);
+            > span {
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+    }
+    &-2.tj-btn {
+      background-color: var(--tj-color-extra-2);
+      .btn_inner {
+        img {
+          filter: brightness(0);
+        }
+      }
+      &:hover {
+        background-color: var(--tj-color-common-white);
+        .btn_inner {
+          img {
+            filter: brightness(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.tj-button-area {
+  .tj-btn {
+    background-color: var(--tj-color-theme-dark);
+    .btn_inner {
+      .btn_text {
+        color: var(--tj-color-common-white);
+      }
+      .btn_icon {
+        > span {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+.tj_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: var(--tj-fw-bold);
+  color: var(--tj-color-theme-dark);
+  background-color: var(--tj-color-common-white);
+  border-radius: 50px;
+  position: relative;
+  z-index: 1;
+  padding: 13px 20px;
+  min-width: 130px;
+
+  .btn_text {
+    display: inline-flex;
+    line-height: 1.15;
+    overflow: hidden;
+    color: var(--tj-color-theme-dark);
+    text-shadow: 0 23px 0 currentColor;
+
+    > span {
+      display: flex;
+      align-items: center;
+      backface-visibility: hidden;
+      transform: translateY(0);
+      transition: 0.5s;
+    }
+  }
+
+  &:hover {
+    .btn_text {
+      color: var(--tj-color-theme-dark);
+
+      > span {
+        transform: translateY(-24px);
+      }
+    }
+  }
+
+  @media #{$xs} {
+    padding: 12px 20px;
+    min-width: 120px;
+
+    .btn_text {
+      line-height: 1.15;
+    }
+  }
+
+  &.secondary {
+    background-color: var(--tj-color-theme-primary);
+    color: var(--tj-color-common-white);
+
+    .btn_text {
+      color: var(--tj-color-common-white);
+    }
+
+    &:hover {
+      .btn_text {
+        color: var(--tj-color-common-white);
+      }
+    }
+  }
+}

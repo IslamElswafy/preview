@@ -1,0 +1,81 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Projct CSS
+----------------------------------------*/
+.tj-project {
+  &-area {
+    padding-bottom: 120px;
+    padding-top: 120px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      width: 65%;
+      height: 80%;
+      border-radius: 50%;
+      background: var(--tj-color-theme-primary);
+      -webkit-filter: blur(150px);
+      filter: blur(150px);
+      opacity: 0.2;
+      z-index: -1;
+      backdrop-filter: blur(10px);
+      @media #{$xl, $lg} {
+        height: 70%;
+      }
+      @media #{$md, $sm, $xs} {
+        width: 65%;
+        height: 65%;
+        opacity: 0.3;
+      }
+    }
+
+    @media #{$lg} {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    @media #{$md,$sm,$xs} {
+      padding-top: 70px;
+      padding-bottom: 70px;
+      &-top {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  &-slider-transition {
+    transition-timing-function: linear;
+  }
+  &-content {
+    display: flex;
+    justify-content: right;
+  }
+  &-title {
+    font-size: 96px;
+    color: var(--tj-color-theme-primary);
+    display: inline-block;
+    font-weight: var(--tj-fw-sbold);
+    line-height: 1;
+    margin: 25px 0 0;
+    @media #{$lg,$md} {
+      font-size: 80px;
+    }
+    @media #{$sm,$xs} {
+      font-size: 70px;
+      margin-top: 0;
+    }
+  }
+  &-thumb {
+    border: 1px solid var(--tj-color-border-2);
+    border-radius: 10px;
+    overflow: hidden;
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+/* !END: Theme Projct CSS */

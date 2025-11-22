@@ -1,0 +1,100 @@
+@use "../utilities" as *;
+
+/* !START: Footer CSS */
+
+.tj-footer {
+	&-section {
+		background: url("../img/bg/bg-common-2.webp");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-bottom: 15px;
+		@media #{$xs} {
+			margin-bottom: 10px;
+		}
+	}
+	&-copyright {
+		padding: 25px 0;
+		border-top: 1px solid var(--tj-color-border-4);
+	}
+
+	&-img {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		max-width: 489px;
+		z-index: 1;
+		mask-image: linear-gradient(
+			180deg,
+			#d9d9d9 0%,
+			rgba(115, 115, 115, 0) 100%
+		);
+		@media #{$xxl} {
+			max-width: 400px;
+		}
+		@media #{$xl} {
+			max-width: 375px;
+		}
+		@media #{$lg} {
+			max-width: 350px;
+		}
+		@media #{$md} {
+			max-width: 300px;
+			left: -115px;
+		}
+		@media #{$sm} {
+			max-width: 300px;
+			left: -154px;
+		}
+		@media #{$xs} {
+			max-width: 250px;
+			left: -164px;
+		}
+		&:last-child {
+			left: auto;
+			right: 0;
+			max-width: 489px;
+			@media #{$xxl} {
+				max-width: 400px;
+			}
+			@media #{$xl} {
+				max-width: 375px;
+			}
+			@media #{$lg} {
+				max-width: 350px;
+			}
+			@media #{$md} {
+				max-width: 300px;
+				right: -115px;
+			}
+			@media #{$sm} {
+				max-width: 300px;
+				right: -154px;
+			}
+
+			@media #{$xs} {
+				max-width: 250px;
+				right: -164px;
+			}
+		}
+	}
+}
+
+.copyright {
+	color: var(--tj-color-common-white-3);
+	font-family: var(--tj-ff-heading);
+	letter-spacing: -0.03em;
+	p {
+		font-weight: var(--tj-fw-sbold);
+		margin-bottom: 0;
+		a {
+			color: var(--tj-color-common-white);
+			&:hover {
+				color: var(--tj-color-border-2);
+			}
+		}
+	}
+}
+
+/* !END: Footer CSS */

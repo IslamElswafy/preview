@@ -1,0 +1,91 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Marquee CSS
+----------------------------------------*/
+.h5-maquee {
+	position: relative;
+	overflow: hidden;
+
+	&-inner {
+		position: relative;
+		background: var(--tj-color-theme-primary);
+		padding: 18px 0;
+		margin: 0 15px;
+		z-index: 3;
+		width: calc(100% - 30px);
+		border-bottom-left-radius: 12px;
+		border-bottom-right-radius: 12px;
+		@media #{$sm} {
+			padding: 14px 0;
+		}
+		@media #{$xs} {
+			width: calc(100% - 20px);
+			padding: 14px 0;
+			margin: 0 10px;
+		}
+		.h5-maquee {
+			&-slider {
+				&-wrapper {
+					transition-timing-function: linear;
+				}
+				&-item {
+					width: auto;
+					display: inline-block;
+					.marquee-box {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						gap: 40px;
+						.marquee-icon {
+							line-height: 1;
+							font-size: 35px;
+							animation: pulseImg 1s infinite;
+							color: var(--tj-color-common-white);
+						}
+						.marquee-title {
+							.title {
+								font-size: 24px;
+								font-weight: var(--tj-fw-sbold);
+								text-transform: capitalize;
+								line-height: 1;
+								margin-bottom: 0;
+								white-space: nowrap;
+								color: var(--tj-color-common-white);
+							}
+						}
+					}
+					@media #{$lg, $md} {
+						.marquee-box {
+							gap: 35px;
+						}
+					}
+					@media #{$sm, $xs} {
+						.marquee-box {
+							gap: 30px;
+							.marquee-icon {
+								font-size: 30px;
+							}
+							.marquee-title {
+								.title {
+									font-size: 20px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes pulseImg {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(0.8);
+	}
+}
+
+/* !END: Theme Marquee CSS */

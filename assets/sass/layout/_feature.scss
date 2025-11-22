@@ -1,0 +1,124 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Fature CSS
+----------------------------------------*/
+
+.tj-feature {
+  &-area {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background: url("../img/bg/bg-common-2.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .tj-section {
+      &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media #{$sm,$xs} {
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+      &-heading {
+        &-left {
+          max-width: 784px;
+          width: 100%;
+          @media #{$sm,$xs} {
+            max-width: 100%;
+          }
+        }
+        &-right {
+          max-width: 364px;
+          width: 100%;
+          @media #{$md} {
+            max-width: 314px;
+          }
+          @media #{$sm,$xs} {
+            max-width: 100%;
+          }
+        }
+      }
+      &-title {
+        color: var(--tj-color-common-white);
+      }
+      &-desc {
+        color: var(--tj-color-common-white-3);
+      }
+    }
+    & .tj-service-title {
+      font-size: 20px;
+    }
+    .tj-section-subtitle {
+      border-color: var(--tj-color-border-1);
+      color: var(--tj-color-common-white);
+    }
+    @media #{$lg} {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+    @media #{$md, $sm, $xs} {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    .features_wrap {
+      .tj-service {
+        &-wrapper {
+          background-color: transparent;
+          box-shadow: 0;
+          border: 1px solid var(--tj-color-border-1);
+          border-radius: 8px;
+        }
+        &-title {
+          text-transform: capitalize;
+          margin-bottom: 10px;
+          color: var(--tj-color-common-white);
+        }
+        &-desc {
+          color: var(--tj-color-common-white-3);
+        }
+      }
+    }
+  }
+
+  &-wrapper {
+    padding: 40px 30px 35px;
+    border-color: 0;
+    background: transparent;
+
+    @media #{$xl, $lg, $md, $sm, $xs} {
+      padding: 30px 15px;
+      .tj-service-title {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &-icon {
+    margin-bottom: 40px;
+    span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 58px;
+      width: 100%;
+      height: 58px;
+      border: 1px solid var(--tj-color-border-1);
+      border-radius: 100%;
+    }
+    @media #{$xl, $lg, $md, $sm, $xs} {
+      margin-bottom: 25px;
+    }
+  }
+}
+.tj-service-wrapper {
+  &:hover {
+    .tj-feature-icon {
+      span {
+        animation: gelatine 0.6s;
+      }
+    }
+  }
+}
+/* !END: Theme Fature CSS */

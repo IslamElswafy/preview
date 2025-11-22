@@ -1,0 +1,153 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: FAQ CSS
+----------------------------------------*/
+.tj-faq-area {
+	padding: 120px 0;
+	@media #{$lg} {
+		padding: 100px 0;
+	}
+	@media #{$md, $sm, $xs} {
+		padding: 70px 0;
+	}
+}
+.tj-faq-style {
+	max-width: 1000px;
+	margin: 0 auto;
+	border: 0;
+	border-radius: 12px;
+	background-color: var(--tj-color-common-white);
+	.accordion-item {
+		border: none;
+		border-radius: 10px;
+		background-color: transparent;
+		color: inherit;
+		box-shadow: none;
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+		.accordion-header {
+			.accordion-button {
+				background: transparent;
+				font-size: 18px;
+				padding: 34px 80px 34px 30px;
+				color: var(--tj-color-heading-primary);
+				font-family: var(--tj-ff-heading);
+				font-weight: var(--tj-fw-sbold);
+				position: relative;
+				border: 0;
+				align-items: flex-start;
+				letter-spacing: -0.03em;
+				@media #{$sm,$xs} {
+					padding: 24px 65px 24px 15px;
+				}
+				span {
+					color: var(--tj-color-common-white-4);
+					margin-right: 5px;
+				}
+				&:before {
+					content: "\e927";
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					line-height: 1;
+					font-size: 23px;
+					right: 30px;
+					font-family: "bexon-icons";
+					font-weight: 500;
+					border: 1px solid var(--tj-color-theme-primary);
+					height: 36px;
+					width: 36px;
+					text-align: center;
+					border-radius: 50%;
+					color: var(--tj-color-theme-primary);
+					background: none;
+					transition: 0.4s;
+					@media #{$sm,$xs} {
+						height: 30px;
+						width: 30px;
+						line-height: 1;
+						font-size: 21px;
+						right: 15px;
+					}
+				}
+				&.collapsed {
+					border: 0;
+					border-top: 1px dashed var(--tj-color-border-2);
+					background: transparent;
+				}
+
+				&:not(.collapsed) {
+					box-shadow: none;
+					color: var(--tj-color-common-white);
+					border-color: var(--tj-color-theme-bg);
+					span {
+						color: var(--tj-color-common-white-3);
+					}
+					&:before {
+						content: "\e918";
+						color: var(--tj-color-heading-primary);
+						border-color: var(--tj-color-common-white);
+						background-color: var(--tj-color-common-white);
+					}
+				}
+				&:focus {
+					box-shadow: none;
+				}
+				&:after {
+					display: none;
+				}
+			}
+		}
+		&:has(.accordion-button:not(.collapsed)) {
+			background-color: var(--tj-color-theme-primary);
+			.accordion-body {
+				color: var(--tj-color-common-white);
+			}
+		}
+		&:first-child {
+			.accordion-button {
+				&.collapsed {
+					border-top: 0;
+				}
+			}
+		}
+		&:not(:has(.collapsed)) + .accordion-item {
+			.accordion-button {
+				&.collapsed {
+					border-color: transparent;
+				}
+			}
+		}
+		.accordion-body {
+			padding: 0;
+			padding-bottom: 30px;
+			padding-top: 25px;
+			border-top: 1px dashed var(--tj-color-border-5);
+			padding: 30px 30px 25px;
+			@media #{$sm,$xs} {
+				padding: 20px 15px 25px;
+			}
+			p,
+			ul {
+				margin-bottom: 0;
+			}
+			ul {
+				padding-left: 15px;
+			}
+			p {
+				a {
+					text-decoration: underline;
+					&:hover {
+						color: var(--tj-color-border-3);
+					}
+				}
+			}
+		}
+	}
+}
+/* !END: FAQ CSS */

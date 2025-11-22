@@ -1,0 +1,167 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme CTA CSS
+----------------------------------------*/
+.tj-cta-section {
+	background: transparent;
+}
+
+.tj-cta-section {
+	&.style-2 {
+		padding-bottom: 0px;
+		background-color: transparent;
+		position: relative;
+	}
+}
+
+.cta-button {
+	margin-bottom: 5px;
+}
+
+.cta-wrapper {
+	padding: 126px 25px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+	&::before {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		border-radius: 25px;
+		z-index: -1;
+	}
+	.cta-content {
+		max-width: 790px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
+		@media #{$lg,$md} {
+			max-width: 554px;
+		}
+		.tj-section-subtitle {
+			color: var(--tj-color-common-white);
+			margin-bottom: 20px;
+			border-color: var(--tj-color-border-1);
+			@media #{$xs} {
+				padding-left: 12px;
+				padding-right: 12px;
+				font-size: 11px;
+			}
+			&::after,
+			&::before {
+				background-color: var(--tj-color-theme-primary);
+			}
+		}
+		.title {
+			color: var(--tj-color-common-white);
+			margin-bottom: 35px;
+
+			&-badge {
+				position: relative;
+				z-index: 0;
+				width: 62px;
+				display: inline-block;
+				margin-right: -4px;
+				@media #{$sm} {
+					width: 50px;
+				}
+				@media #{$xs} {
+					width: 30px;
+					margin-right: 0px;
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					left: 52%;
+					top: 52%;
+					transform: translate(-51%, -50%);
+					z-index: -1;
+					width: 100%; // or specific value
+					height: auto; // or specific value
+					aspect-ratio: 1 / 1; // optional, or set height explicitly
+					background-image: url("../img/icon/title-badge-rounded.svg");
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					@media #{$xs} {
+						top: 44%;
+					}
+				}
+			}
+		}
+	}
+	@media #{$xl} {
+		.cta-content {
+			.title {
+				font-size: 55px;
+			}
+		}
+	}
+	@media #{$lg} {
+		.cta-content {
+			.title {
+				font-size: 50px;
+			}
+		}
+	}
+	@media #{$md} {
+		padding: 40px 15px;
+		.cta-content {
+			.title {
+				font-size: 45px;
+				margin-bottom: 25px;
+			}
+		}
+	}
+	@media #{$sm} {
+		padding: 40px 15px;
+		.cta-content {
+			.subtitle {
+				margin-bottom: 15px;
+			}
+			.title {
+				font-size: 35px;
+				margin-bottom: 25px;
+			}
+		}
+	}
+	@media #{$xs} {
+		padding: 40px 15px;
+		.cta-content {
+			.subtitle {
+				font-size: 12px;
+				margin-bottom: 12px;
+			}
+			.title {
+				font-size: 23px;
+				margin-bottom: 25px;
+			}
+		}
+	}
+}
+.featured-cta--elementor {
+	padding-top: 120px;
+	@media #{$lg} {
+		padding-top: 100px;
+	}
+	@media #{$md, $sm, $xs} {
+		padding-top: 70px;
+	}
+}
+
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+/* !END: Theme CTA CSS */
